@@ -75,7 +75,7 @@ export default function Hero() {
               paddingBottom: 6,
             }}
           >
-            Gia Truyền Từ Năm 1975 · Nam Định
+            Ngọc Hân  Từ Năm 1975 · Nam Định
           </div>
           
           <h1
@@ -103,7 +103,7 @@ export default function Hero() {
               maxWidth: 650, // Khống chế chiều ngang đoạn văn cho dễ đọc
             }}
           >
-            Nước dùng xương bò hầm 12 tiếng, bí quyết gia truyền qua 3 thế hệ.
+            Nước dùng xương bò hầm 12 tiếng, bí quyết Ngọc Hân  qua 3 thế hệ.
             Mỗi bát phở là một hành trình về với hương vị Hà Nội xưa.
           </p>
           
@@ -154,27 +154,30 @@ export default function Hero() {
 
           {/* Thống kê */}
           <div
-            className="flex flex-wrap gap-10" // Tăng khoảng cách giữa các cột thống kê
+            className="flex flex-wrap gap-10" 
             style={{ marginTop: 64, paddingTop: 40, borderTop: "1px solid rgba(255,255,255,0.15)" }}
           >
             {[
               { value: "1975", label: "Năm thành lập" },
-              { value: "3", label: "Thế hệ gia truyền" },
+              { value: "3", label: "Thế hệ Ngọc Hân " },
               { value: "12h", label: "Hầm xương mỗi ngày" },
               { value: "4.9★", label: "Đánh giá trung bình" },
             ].map((s) => (
-              <div key={s.label}>
+              // PHÉP THUẬT Ở ĐÂY: Thêm style={{ textAlign: "center" }} vào thẻ div này
+              <div key={s.label} style={{ textAlign: "center" }}> 
                 <div
                   style={{
                     fontFamily: "'Lora', serif",
-                    fontSize: 32, // Số thống kê to hơn (cũ là 26)
+                    fontSize: 32, 
                     fontWeight: 700,
                     color: "#f0c060",
                   }}
                 >
                   {s.value}
                 </div>
-                <div style={{ fontSize: 14, color: "#a89070", letterSpacing: 0.5 }}>{s.label}</div>
+                <div style={{ fontSize: 14, color: "#a89070", letterSpacing: 0.5, marginTop: 4 }}>
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>

@@ -17,7 +17,7 @@ export default function Footer() {
                 marginBottom: 8,
               }}
             >
-              Phở Gia Truyền
+              Phở Ngọc Hân 
             </div>
             <div style={{ fontSize: 11, color: "#b8860b", letterSpacing: 2, textTransform: "uppercase", marginBottom: 14 }}>
               Nam Định · 1975
@@ -78,7 +78,7 @@ export default function Footer() {
           }}
         >
           <div style={{ color: "#3a2010", fontSize: 12 }}>
-            © 2026 Phở Gia Truyền Nam Định. Bảo lưu mọi quyền.
+            © 2026 Phở Ngọc Hân  Nam Định. Bảo lưu mọi quyền.
           </div>
           <div style={{ color: "#3a2010", fontSize: 12 }}>
             Thiết kế với ❤️ cho ẩm thực Việt Nam

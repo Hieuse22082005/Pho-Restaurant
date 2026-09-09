@@ -69,7 +69,7 @@ export default function Navbar() {
                     lineHeight: 1.1,
                   }}
                 >
-                  Phở Gia Truyền
+                  Phở Ngọc Hân 
                 </div>
                 <div style={{ fontSize: 10, color: "#b8860b", letterSpacing: 2, textTransform: "uppercase" }}>
                   Nam Định · 1975

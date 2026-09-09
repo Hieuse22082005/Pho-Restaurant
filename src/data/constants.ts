@@ -59,7 +59,7 @@ export const MENU_CATEGORIES = [
     label: "Món Ăn Kèm",
     items: [
       { name: "Quẩy Giòn", price: "10.000đ", desc: "Quẩy nóng giòn rụm" },
-      { name: "Giò Lụa", price: "25.000đ", desc: "Giò lụa gia truyền Hà Nội" },
+      { name: "Giò Lụa", price: "25.000đ", desc: "Giò lụa Ngọc Hân  Hà Nội" },
       { name: "Chả Cốm", price: "30.000đ", desc: "Chả cốm xanh thơm dẻo" },
       { name: "Đĩa Rau Sống", price: "15.000đ", desc: "Giá đỗ, húng quế, chanh ớt tươi" },
     ],

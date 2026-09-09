@@ -1,4 +1,4 @@
-# 🍜 Phở Gia Truyền - Restaurant Website
+# 🍜 Phở Ngọc Hân  - Restaurant Website
 
 Một trang web hiện đại, mượt mà và sang trọng dành cho nhà hàng Phở truyền thống. Dự án được xây dựng với kiến trúc Component-based gọn gàng, tích hợp các hiệu ứng chuyển động vật lý (spring physics) cao cấp.
 
