@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@theme inline {
+  --color-background: #f5f0e8;
+  --color-foreground: #2c1a0e;
+  --color-card: #fdf9f2;
+  --color-card-foreground: #2c1a0e;
+  --color-primary: #8b2000;
+  --color-primary-foreground: #fdf9f2;
+  --color-secondary: #5c3d1e;
+  --color-secondary-foreground: #fdf9f2;
+  --color-muted: #e8ddc8;
+  --color-muted-foreground: #7a5c3a;
+  --color-accent: #b8860b;
+  --color-accent-foreground: #fdf9f2;
+  --color-border: #d4c4a0;
+  --color-ring: #8b2000;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  --radius: 4px;
+}
+
+body {
+  background-color: #f5f0e8;
+  color: #2c1a0e;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+}
+
+/* Hide scrollbar by default */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 2px;
+}
+:hover::-webkit-scrollbar-thumb {
+  background: #d4c4a0;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}

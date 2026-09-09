@@ -1,0 +1,10 @@
+{
+  "description": "Discover and order authentic Vietnamese Pho online with an inviting restaurant website that showcases a rich menu and easy reservation options.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
