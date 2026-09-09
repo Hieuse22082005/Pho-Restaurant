@@ -53,7 +53,7 @@ export default function Hero() {
       <div
         style={{
           position: "relative",
-          maxWidth: 1400, // TĂNG LÊN 1400px (cũ là 1200px) ĐỂ NỘI DUNG ĐẨY SÁT RA LỀ TRÁI HƠN
+          maxWidth: 2000, // TĂNG LÊN 1400px (cũ là 1200px) ĐỂ NỘI DUNG ĐẨY SÁT RA LỀ TRÁI HƠN
           margin: "0 auto",
           padding: "80px 2rem 60px",
           width: "100%",

@@ -5,12 +5,10 @@ import { NAV_LINKS } from "../data/constants";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // Biến theo dõi trạng thái cuộn chuột
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Hàm lắng nghe sự kiện cuộn trang
   useEffect(() => {
     const handleScroll = () => {
-      // Nếu cuộn xuống quá 50px thì đổi màu, ngược lại thì trong suốt
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
@@ -30,55 +28,58 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        /* PHÉP THUẬT NẰM Ở ĐÂY: Thay đổi CSS dựa trên biến isScrolled */
         background: isScrolled ? "rgba(44, 26, 14, 0.97)" : "transparent",
         backdropFilter: isScrolled ? "blur(8px)" : "none",
         borderBottom: isScrolled ? "1px solid rgba(184, 134, 11, 0.3)" : "1px solid transparent",
-        transition: "all 0.3s ease-in-out", // Giúp hiệu ứng chuyển màu mượt mà
+        transition: "all 0.3s ease-in-out",
       }}
     >
-      <div style={{ maxWidth: 1500, margin: "0 auto", padding: "0 2rem" }}>
-        <div className="flex items-center justify-between" style={{ height: 72 }}> {/* Chỉnh lại chiều cao một chút cho cân đối */}
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-2" style={{ textDecoration: "none" }}>
-            <div
-              style={{
-                width: 36,
-                height: 36,
-                background: "#8b2000",
-                borderRadius: 4,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 18,
-                fontFamily: "'Lora', serif",
-                fontWeight: 700,
-                color: "#fdf9f2",
-                letterSpacing: "-0.5px",
-              }}
-            >
-              Phở
-            </div>
-            <div>
+      <div style={{ maxWidth: 1700, margin: "0 auto", padding: "0 2rem" }}>
+        {/* KHUNG FLEX CHIA 3 PHẦN */}
+        <div className="flex items-center justify-between" style={{ height: 80 }}>
+          
+          {/* PHẦN 1: LOGO (Căn trái) */}
+          <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+            <a href="#home" className="flex items-center gap-2" style={{ textDecoration: "none" }}>
               <div
                 style={{
+                  width: 38,
+                  height: 38,
+                  background: "#8b2000",
+                  borderRadius: 4,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 18,
                   fontFamily: "'Lora', serif",
                   fontWeight: 700,
-                  fontSize: 17,
                   color: "#fdf9f2",
-                  lineHeight: 1.1,
+                  letterSpacing: "-0.5px",
                 }}
               >
-                Phở Gia Truyền
+                Phở
               </div>
-              <div style={{ fontSize: 10, color: "#b8860b", letterSpacing: 2, textTransform: "uppercase" }}>
-                Nam Định · 1975
+              <div>
+                <div
+                  style={{
+                    fontFamily: "'Lora', serif",
+                    fontWeight: 700,
+                    fontSize: 18,
+                    color: "#fdf9f2",
+                    lineHeight: 1.1,
+                  }}
+                >
+                  Phở Gia Truyền
+                </div>
+                <div style={{ fontSize: 10, color: "#b8860b", letterSpacing: 2, textTransform: "uppercase" }}>
+                  Nam Định · 1975
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          {/* PHẦN 2: MENU (Căn giữa, chữ to hơn) */}
+          <nav className="hidden md:flex items-center justify-center gap-10" style={{ flex: 2 }}>
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
@@ -86,9 +87,9 @@ export default function Navbar() {
                 style={{
                   color: "#e8ddc8",
                   textDecoration: "none",
-                  fontSize: 14,
+                  fontSize: 16, // Chữ to ra (cũ là 14)
                   fontWeight: 500,
-                  letterSpacing: 0.3,
+                  letterSpacing: 0.5, // Giãn chữ ra một chút cho sang trọng
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#b8860b")}
@@ -97,15 +98,21 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+          </nav>
+
+          {/* PHẦN 3: NÚT BẤM & NÚT MOBILE (Căn phải) */}
+          <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+            {/* Nút bấm Đặt bàn (Desktop) */}
             <a
               href="#reservation"
+              className="hidden md:inline-block"
               style={{
                 background: "#8b2000",
                 color: "#fdf9f2",
-                padding: "8px 20px",
+                padding: "10px 24px",
                 borderRadius: 4,
                 textDecoration: "none",
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 600,
                 letterSpacing: 0.5,
                 transition: "background 0.2s",
@@ -115,24 +122,24 @@ export default function Navbar() {
             >
               Đặt Bàn Ngay
             </a>
-          </nav>
 
-          {/* Mobile Hamburger */}
-          <button
-            className="md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              background: "none",
-              border: "none",
-              color: "#e8ddc8",
-              fontSize: 24,
-              cursor: "pointer",
-              padding: "4px 8px",
-            }}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? "✕" : "☰"}
-          </button>
+            {/* Nút Hamburger (Mobile) */}
+            <button
+              className="md:hidden"
+              onClick={() => setMenuOpen(!menuOpen)}
+              style={{
+                background: "none",
+                border: "none",
+                color: "#e8ddc8",
+                fontSize: 24,
+                cursor: "pointer",
+                padding: "4px 8px",
+              }}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? "✕" : "☰"}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Nav Dropdown */}
@@ -142,7 +149,7 @@ export default function Navbar() {
             style={{
               borderTop: "1px solid rgba(184, 134, 11, 0.2)",
               paddingBottom: 16,
-              background: isScrolled ? "transparent" : "rgba(44, 26, 14, 0.95)", // Thêm nền nếu đang ở trạng thái trong suốt mà bấm mở menu
+              background: isScrolled ? "transparent" : "rgba(44, 26, 14, 0.95)",
               borderRadius: "0 0 8px 8px"
             }}
           >
