@@ -300,7 +300,7 @@ export default function Reservation() {
                   <div style={{ color: "#fdf9f2", fontWeight: 600, fontSize: 14 }}>48 Phố Hàng Bông</div>
                   <div style={{ color: "#e8ddc8", fontSize: 12 }}>Hoàn Kiếm, Hà Nội</div>
                   <a
-                    href="https://maps.google.com"
+                    href="https://www.google.com/maps/place/Ph%E1%BB%9F+10+L%C3%BD+Qu%E1%BB%91c+S%C6%B0/@21.0302179,105.8477935,19.75z/data=!4m15!1m8!3m7!1s0x3135ab95f5fa3a3d:0x579e0b7b80609833!2zNDggUC4gSMOgbmcgQsO0bmcsIFN0cmVldCwgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWkgMTAwMDAsIFZp4buHdCBOYW0!3b1!8m2!3d21.0307652!4d105.8478814!16s%2Fg%2F11rg60ghpr!3m5!1s0x3135ab9588b10501:0xf8a3cc53d3aad1eb!8m2!3d21.0304701!4d105.84876!16s%2Fg%2F11fxf7gy7d?entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

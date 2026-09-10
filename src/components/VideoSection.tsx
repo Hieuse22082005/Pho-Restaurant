@@ -12,7 +12,7 @@ const VIDEOS = [
   },
   { 
     id: 2, 
-    src: "/thaithit.mp4", 
+    src: "/thitt.mp4", 
     title: "2. Nghệ Thuật Cắt Thái",
     desc: "Từng nhát dao điêu luyện lướt qua tảng lõi rùa, thái mỏng như lá lúa để giữ trọn vẹn độ mềm và ngọt nguyên bản."
   },
