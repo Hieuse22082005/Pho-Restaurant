@@ -28,17 +28,26 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        background: isScrolled ? "rgba(44, 26, 14, 0.97)" : "transparent",
-        backdropFilter: isScrolled ? "blur(8px)" : "none",
-        borderBottom: isScrolled ? "1px solid rgba(184, 134, 11, 0.3)" : "1px solid transparent",
-        transition: "all 0.3s ease-in-out",
+        // Thay transparent bằng rgba(44,26,14,0) để đổi màu không bị ám xám đen
+        background: isScrolled ? "rgba(44, 26, 14, 0.97)" : "rgba(44, 26, 14, 0)",
+        backdropFilter: isScrolled ? "blur(8px)" : "blur(0px)",
+        borderBottom: isScrolled ? "1px solid rgba(184, 134, 11, 0.2)" : "1px solid rgba(184, 134, 11, 0)",
+        // Tăng thời gian lên 0.5s để cảm nhận độ mượt rõ hơn
+        transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
       }}
     >
       <div style={{ maxWidth: 1700, margin: "0 auto", padding: "0 2rem" }}>
-        {/* KHUNG FLEX CHIA 3 PHẦN */}
-        <div className="flex items-center justify-between" style={{ height: 80 }}>
+        
+        {/* HIỆU ỨNG THU GỌN: Chiều cao giảm mượt mà từ 96px xuống 70px khi cuộn */}
+        <div 
+          className="flex items-center justify-between" 
+          style={{ 
+            height: isScrolled ? 70 : 96,
+            transition: "height 0.5s cubic-bezier(0.4, 0, 0.2, 1)", 
+          }}
+        >
           
-          {/* PHẦN 1: LOGO (Căn trái) */}
+          {/* PHẦN 1: LOGO */}
           <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
             <a href="#home" className="flex items-center gap-2" style={{ textDecoration: "none" }}>
               <div
@@ -78,7 +87,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* PHẦN 2: MENU (Căn giữa, chữ to hơn) */}
+          {/* PHẦN 2: MENU */}
           <nav className="hidden md:flex items-center justify-center gap-10" style={{ flex: 2 }}>
             {NAV_LINKS.map((l) => (
               <a
@@ -87,9 +96,9 @@ export default function Navbar() {
                 style={{
                   color: "#e8ddc8",
                   textDecoration: "none",
-                  fontSize: 16, // Chữ to ra (cũ là 14)
+                  fontSize: 16,
                   fontWeight: 500,
-                  letterSpacing: 0.5, // Giãn chữ ra một chút cho sang trọng
+                  letterSpacing: 0.5,
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#b8860b")}
@@ -100,9 +109,8 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* PHẦN 3: NÚT BẤM & NÚT MOBILE (Căn phải) */}
-          <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-            {/* Nút bấm Đặt bàn (Desktop) */}
+          {/* PHẦN 3: NÚT BẤM & NÚT MOBILE */}
+          <div style={{ flex: 1, display: "flex", justifyItems: "flex-end", alignItems: "center", justifyContent: "flex-end" }}>
             <a
               href="#reservation"
               className="hidden md:inline-block"
@@ -123,7 +131,6 @@ export default function Navbar() {
               Đặt Bàn Ngay
             </a>
 
-            {/* Nút Hamburger (Mobile) */}
             <button
               className="md:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
